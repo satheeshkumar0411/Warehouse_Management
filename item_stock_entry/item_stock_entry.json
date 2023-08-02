@@ -1,0 +1,123 @@
+{
+ "actions": [],
+ "creation": "2023-07-27 13:17:10.678170",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "select",
+  "section_break_2",
+  "warehouse_name",
+  "item_name",
+  "time",
+  "from_warehouse",
+  "to_warehouse",
+  "column_break_7",
+  "quantity",
+  "movement_id",
+  "export_item",
+  "refill_item",
+  "data_3"
+ ],
+ "fields": [
+  {
+   "fieldname": "select",
+   "fieldtype": "Select",
+   "label": "Select",
+   "options": "\nExport\nRefill"
+  },
+  {
+   "fieldname": "item_name",
+   "fieldtype": "Link",
+   "label": "Item Name",
+   "options": "items"
+  },
+  {
+   "fieldname": "data_3",
+   "fieldtype": "Data",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.select == \"Export\"",
+   "fieldname": "export_item",
+   "fieldtype": "Button",
+   "label": "Export Item"
+  },
+  {
+   "depends_on": "eval:doc.select == \"Refill\"",
+   "fieldname": "refill_item",
+   "fieldtype": "Button",
+   "label": "Refill Item"
+  },
+  {
+   "depends_on": "eval:doc.select == \"Export\"",
+   "fieldname": "from_warehouse",
+   "fieldtype": "Link",
+   "label": "From Warehouse",
+   "options": "Item_Warehouse"
+  },
+  {
+   "depends_on": "eval:doc.select == \"Export\"",
+   "fieldname": "to_warehouse",
+   "fieldtype": "Link",
+   "label": "To Warehouse",
+   "options": "Item_Warehouse"
+  },
+  {
+   "depends_on": "eval:doc.select == \"Refill\"",
+   "fieldname": "warehouse_name",
+   "fieldtype": "Link",
+   "label": "Warehouse Name",
+   "options": "Item_Warehouse"
+  },
+  {
+   "fieldname": "quantity",
+   "fieldtype": "Data",
+   "label": "Quantity"
+  },
+  {
+   "fieldname": "movement_id",
+   "fieldtype": "Select",
+   "label": "Movement ID",
+   "options": "\nBy Road\nBy Rail\nBy Air"
+  },
+  {
+   "fieldname": "section_break_2",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "time",
+   "fieldtype": "Time",
+   "label": "Time"
+  }
+ ],
+ "hide_toolbar": 1,
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2023-07-27 19:41:57.993663",
+ "modified_by": "Administrator",
+ "module": "Stanch",
+ "name": "Item_Stock Entry",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
